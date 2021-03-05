@@ -1,7 +1,4 @@
-/node_modules
-/dist
-/.cache
-/.vscode
-/.github
-*.zip
-*.rar
+/phaser/node_modules
+/phaser/dist
+/phaser/.cache
+/phaser/.vscode
