@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <meta name="theme-color" content="#000000" />
+
+    <link rel="manifest" href="./manifest.json" />
+
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="application-name" content="<%= htmlWebpackPlugin.options.gameName %>" />
+    <meta name="apple-mobile-web-app-title" content="<%= htmlWebpackPlugin.options.gameName %>" />
+    <meta name="msapplication-starturl" content="./" />
+
+    <link rel="icon" type="image/png" sizes="192x192" href="./icons/icons-192.png" />
+    <link rel="apple-touch-icon" type="image/png" sizes="192x192" href="./icons/icons-192.png" />
+
+    <link rel="icon" type="image/png" sizes="512x512" href="./icons/icons-512.png" />
+    <link rel="apple-touch-icon" type="image/png" sizes="512x512" href="./icons/icons-512.png" />
+
+    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon" />
+
+    <title>
+        <%= htmlWebpackPlugin.options.gameName %>
+    </title>
+    <style>
+        @font-face {
+            font-family: Heebo-Regular;
+            src: url('assets/font/Heebo-Regular.ttf');
+            font-weight: 400;
+            font-weight: normal;
+        }
+        @font-face {
+            font-family: Heebo-Black;
+            src: url('assets/font/Heebo-Black.ttf');
+            font-weight: 400;
+            font-weight: normal;
+        }
+        @font-face {
+            font-family: Heebo-Bold;
+            src: url('assets/font/Heebo-Bold.ttf');
+            font-weight: 400;
+            font-weight: normal;
+        }
+        @font-face {
+            font-family: Gotham-Medium;
+            src: url('assets/font/Gotham/Gotham-Medium.otf');
+            font-weight: 400;
+            font-weight: normal;
+        }
+        @font-face {
+            font-family: Gotham-MediumItalic;
+            src: url('assets/font/Gotham/Gotham-MediumItalic.otf');
+            font-weight: 400;
+            font-weight: normal;
+        }
+        @font-face {
+            font-family: Gotham-BlackItalic;
+            src: url('assets/font/Gotham/Gotham-BlackItalic.otf');
+            font-weight: 400;
+            font-weight: normal;
+        }
+
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            background-color: white;
+        }
+
+        div.prompt-rotate {
+            z-index: 999;
+            width: 100vw;
+            height: 100vh;
+            background-color: rgba(0, 0, 0, 1.0);
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        div.prompt-rotate.hide {
+            display: none;
+        }
+
+        div.prompt-rotate.show {
+            display: flex;
+            flex-direction: column;
+            top: 0;
+            position: fixed;
+            align-items: center;
+            justify-content: center;
+        }
+
+        div.prompt-rotate img {
+            width: 100px;
+            height: 100px;
+        }
+
+        div.prompt-rotate span {
+            color: #fff;
+            width: 80%;
+            text-align: center;
+            margin-top: 10px;
+            font-family: "AkzidenzRegular";
+        }
+
+        div.prompt-rotate-portrait {
+            z-index: 999;
+            width: 100vw;
+            height: 100vh;
+            background-color: rgba(0, 0, 0, 1.0);
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        div.prompt-rotate-portrait.hide {
+            display: none;
+        }
+
+        div.prompt-rotate-portrait.show {
+            display: flex;
+            flex-direction: column;
+            top: 0;
+            position: fixed;
+            align-items: center;
+            justify-content: center;
+        }
+
+        div.prompt-rotate-portrait img {
+            width: 100px;
+            height: 100px;
+        }
+
+        div.prompt-rotate-portrait span {
+            color: #fff;
+            width: 80%;
+            text-align: center;
+            margin-top: 10px;
+            font-family: "AkzidenzRegular";
+        }
+    </style>
+
+    <noscript>Please enable javascript to continue using this application.</noscript>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"
+        integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT"
+        crossorigin="anonymous"></script>
+
+    <!-- installs the serviceWorker -->
+    <!-- <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('./sw.js')
+        })
+      }
+    </script> -->
+</head>
+
+<body class="site-play-game">
+    <div style="font-family:Heebo-Black; position:absolute; left:-1000px; visibility:hidden;">.</div>
+    <div style="font-family:Heebo-Bold; position:absolute; left:-1000px; visibility:hidden;">.</div>
+    <div style="font-family:Gotham-Medium; position:absolute; left:-1000px; visibility:hidden;">.</div>
+    <div style="font-family:Gotham-MediumItalic; position:absolute; left:-1000px; visibility:hidden;">.</div>
+    <div style="font-family:Gotham-BlackItalic; position:absolute; left:-1000px; visibility:hidden;">.</div>
+    <div id="phaser-game"></div>
+
+    <div class="prompt-rotate hide">
+        <img src="assets/img/promptRotateScreen.png" />
+        <span>This website is best viewed on landscape mode of your devices.</span>
+    </div>
+</body>
+
+</html>
