@@ -4,7 +4,7 @@
 ## About
 A endless racing microsite game for Nutanix.
 
-Tech Stack:
+:desktop_computer:Tech Stack:
 * JavaScript
 * Phaser
 * HTML5
